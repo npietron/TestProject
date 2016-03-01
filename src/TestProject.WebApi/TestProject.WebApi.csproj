@@ -157,7 +157,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\TestProject.Services\TestProject.Services.csproj">
+    <ProjectReference Include="..\TestProject.Services\TestProject.Services.csproj">
       <Project>{1a55e261-a635-4f55-8398-6a22e7c098ab}</Project>
       <Name>TestProject.Services</Name>
     </ProjectReference>

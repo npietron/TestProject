@@ -19,9 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.BusinessLogic.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.DataLayer", "src\TestProject.DataLayer\TestProject.DataLayer.csproj", "{987C7EBA-5253-4ACD-8972-E09A012F8572}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.WebUI", "TestProject.WebUI\TestProject.WebUI.csproj", "{AF573844-52CC-4E58-B68F-2A576E32DFA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.WebUI", "src\TestProject.WebUI\TestProject.WebUI.csproj", "{AF573844-52CC-4E58-B68F-2A576E32DFA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.WebApi", "TestProject.WebApi\TestProject.WebApi.csproj", "{29E6C05C-5C3E-422A-B851-B9E96B4BA1FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.WebApi", "src\TestProject.WebApi\TestProject.WebApi.csproj", "{29E6C05C-5C3E-422A-B851-B9E96B4BA1FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
