@@ -9,11 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AC395487-9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Model", "src\TestProject.Model\TestProject.Model.csproj", "{0B010AC6-6F02-420C-B403-96F9A7CDB381}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestModel.BusinessLogic", "src\TestModel.BusinessLogic\TestModel.BusinessLogic.csproj", "{FC492E6F-4A85-44AD-AD1F-E401ABDBCE1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.BusinessLogic", "src\TestProject.BusinessLogic\TestProject.BusinessLogic.csproj", "{FC492E6F-4A85-44AD-AD1F-E401ABDBCE1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Common", "src\TestProject.Common\TestProject.Common.csproj", "{79A8E93C-8118-4DE5-8183-88A1646DA6CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.Services", "src\TestProject.Services\TestProject.Services.csproj", "{1A55E261-A635-4F55-8398-6A22E7C098AB}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TestProject.WebUI", "src\TestProject.WebUI\TestProject.WebUI.xproj", "{719BAE71-45AB-4037-AECD-EA638089634F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{1A55E261-A635-4F55-8398-6A22E7C098AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A55E261-A635-4F55-8398-6A22E7C098AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A55E261-A635-4F55-8398-6A22E7C098AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{719BAE71-45AB-4037-AECD-EA638089634F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719BAE71-45AB-4037-AECD-EA638089634F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719BAE71-45AB-4037-AECD-EA638089634F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719BAE71-45AB-4037-AECD-EA638089634F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +52,6 @@ Global
 		{FC492E6F-4A85-44AD-AD1F-E401ABDBCE1C} = {58E6EDE3-6D31-426A-93BC-F0D23473D32F}
 		{79A8E93C-8118-4DE5-8183-88A1646DA6CF} = {58E6EDE3-6D31-426A-93BC-F0D23473D32F}
 		{1A55E261-A635-4F55-8398-6A22E7C098AB} = {58E6EDE3-6D31-426A-93BC-F0D23473D32F}
+		{719BAE71-45AB-4037-AECD-EA638089634F} = {58E6EDE3-6D31-426A-93BC-F0D23473D32F}
 	EndGlobalSection
 EndGlobal

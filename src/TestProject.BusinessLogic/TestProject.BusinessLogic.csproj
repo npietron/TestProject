@@ -7,8 +7,8 @@
     <ProjectGuid>{FC492E6F-4A85-44AD-AD1F-E401ABDBCE1C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestModel.BusinessLogic</RootNamespace>
-    <AssemblyName>TestModel.BusinessLogic</AssemblyName>
+    <RootNamespace>TestProject.BusinessLogic</RootNamespace>
+    <AssemblyName>TestProject.BusinessLogic</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
