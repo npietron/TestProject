@@ -24,8 +24,6 @@ namespace TestProject.WebApi
 
             ODataModelBuilder builder = new ODataConventionModelBuilder();
 
-
-
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: null,
