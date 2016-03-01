@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IMessageService.cs" />
+    <Compile Include="Abstract\IPostService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\CustomMesssageService.cs" />
+    <Compile Include="Concrete\CustomPostService.cs" />
+    <Compile Include="Concrete\CustomUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestProject.DataLayer\TestProject.DataLayer.csproj">
+      <Project>{987c7eba-5253-4acd-8972-e09a012f8572}</Project>
+      <Name>TestProject.DataLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
