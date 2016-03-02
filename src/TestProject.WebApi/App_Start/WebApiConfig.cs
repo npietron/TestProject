@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
+using TestProject.WebApi;
 
 namespace TestProject.WebApi
 {
@@ -11,23 +12,17 @@ namespace TestProject.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            MappingsConfig.RegisterMappings();
 
-            // Web API routes
-            config.MapHttpAttributeRoutes();
+            AutofacConfig.RegisterTypes(config);
+
+            ODataConfig.Register(config);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
-            ODataModelBuilder builder = new ODataConventionModelBuilder();
-
-            config.MapODataServiceRoute(
-                routeName: "ODataRoute",
-                routePrefix: null,
-                model: builder.GetEdmModel());
         }
     }
 }

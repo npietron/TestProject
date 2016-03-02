@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestProject.Services.Abstract
+namespace TestProject.Services.REST.Abstract
 {
-    public interface IMessageService
+    public interface IUserService
     {
-
     }
 }

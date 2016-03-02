@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestProject.DataLayer.Repositories.Abstract;
-using TestProject.Services.Abstract;
+using TestProject.Services.REST.Abstract;
 
-namespace TestProject.Services.Concrete
+namespace TestProject.Services.REST.Concrete
 {
     public class CustomUserService : IUserService
     {
