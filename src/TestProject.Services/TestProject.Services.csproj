@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +47,7 @@
     <Compile Include="Contracts\Message\MessageDto.cs" />
     <Compile Include="Contracts\Post\PostDto.cs" />
     <Compile Include="Contracts\User\UserDto.cs" />
+    <Compile Include="Mapper\MappingsConfig.cs" />
     <Compile Include="REST\Abstract\IMessageService.cs" />
     <Compile Include="REST\Abstract\IPostService.cs" />
     <Compile Include="REST\Abstract\IUserService.cs" />
@@ -60,6 +65,9 @@
       <Project>{0b010ac6-6f02-420c-b403-96f9a7cdb381}</Project>
       <Name>TestProject.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

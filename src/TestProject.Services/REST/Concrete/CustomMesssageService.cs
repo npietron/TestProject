@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using TestProject.DataLayer.Repositories.Abstract;
 using TestProject.Model;
+using TestProject.Services.Contracts.Message;
+using TestProject.Services.Mapper;
 using TestProject.Services.REST.Abstract;
 
 namespace TestProject.Services.REST.Concrete
@@ -18,24 +16,44 @@ namespace TestProject.Services.REST.Concrete
             _messageRepository = messageRepository;
         }
 
-        public IQueryable<Message> Get()
+        public void AddMessage(MessageDto message)
         {
-            return _messageRepository.Messages;
+            var mappedMessage = MappingsConfig.Mapper.Map<Message>(message);
+
+            _messageRepository.SaveMessage(mappedMessage);
         }
 
-        public Message Get(int messageId)
+        public IQueryable<MessageDto> Get()
         {
-            return _messageRepository.Messages.FirstOrDefault(x => x.MessageId == messageId);
+            var result = _messageRepository.Messages;
+            var messages = MappingsConfig.Mapper.Map<IQueryable<MessageDto>>(result);
+
+            return messages;
         }
 
-        public IQueryable<Message> GetMessagesByPostId(int postId)
+        public MessageDto Get(int messageId)
         {
-            return _messageRepository.Messages.Where(x => x.PostId == postId);
+            var result = _messageRepository.Messages.FirstOrDefault(x => x.MessageId == messageId);
+            var messages = MappingsConfig.Mapper.Map<MessageDto>(result);
+
+
+            return messages;
         }
 
-        public IQueryable<Message> GetMessagesByUserId(int userId)
+        public IQueryable<MessageDto> GetMessagesByPostId(int postId)
         {
-            return _messageRepository.Messages.Where(x => x.UserId == userId);
+            var result = _messageRepository.Messages.Where(x => x.PostId == postId);
+            var messages = MappingsConfig.Mapper.Map<IQueryable<MessageDto>>(result);
+
+            return messages;
+        }
+
+        public IQueryable<MessageDto> GetMessagesByUserId(int userId)
+        {
+            var result = _messageRepository.Messages.Where(x => x.UserId == userId);
+            var messages = MappingsConfig.Mapper.Map<IQueryable<MessageDto>>(result);
+
+            return messages;
         }
     }
 }

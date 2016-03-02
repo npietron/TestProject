@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using TestProject.DataLayer.Repositories.Abstract;
 using TestProject.Model;
+using TestProject.Services.Contracts.Post;
+using TestProject.Services.Mapper;
 using TestProject.Services.REST.Abstract;
 
 namespace TestProject.Services.REST.Concrete
@@ -18,19 +16,35 @@ namespace TestProject.Services.REST.Concrete
             _postRepository = postRepository;
         }
 
-        public IQueryable<Post> Get()
+        public void AddPost(PostDto post)
         {
-            return _postRepository.Posts;
+            var mappedPost = MappingsConfig.Mapper.Map<Post>(post);
+
+            _postRepository.SavePost(mappedPost);
         }
 
-        public Post Get(int postId)
+        public IQueryable<PostDto> Get()
         {
-            return _postRepository.Posts.FirstOrDefault(x => x.PostId == postId);
+            var result = _postRepository.Posts;
+            var posts = MappingsConfig.Mapper.Map<IQueryable<PostDto>>(result);
+
+            return posts;
         }
 
-        public IQueryable<Post> GetPostsByUserId(int userId)
+        public PostDto Get(int postId)
         {
-            return _postRepository.Posts.Where(x => x.UserId == userId);
+            var result = _postRepository.Posts.FirstOrDefault(x => x.PostId == postId);
+            var post = MappingsConfig.Mapper.Map<PostDto>(result);
+
+            return post;
+        }
+
+        public IQueryable<PostDto> GetPostsByUserId(int userId)
+        {
+            var result = _postRepository.Posts.Where(x => x.UserId == userId);
+            var posts = MappingsConfig.Mapper.Map<IQueryable<PostDto>>(result);
+
+            return posts;
         }
     }
 }

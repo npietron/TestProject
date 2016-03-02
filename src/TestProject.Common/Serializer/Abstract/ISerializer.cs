@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestProject.Common.Serializer.Abstract
+﻿namespace TestProject.Common.Serializer.Abstract
 {
     public interface ISerializer<T>
     {

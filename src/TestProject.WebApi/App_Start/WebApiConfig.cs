@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-using System.Web.OData.Builder;
-using System.Web.OData.Extensions;
-using TestProject.WebApi;
+﻿using System.Web.Http;
+using TestProject.Services.Mapper;
 
 namespace TestProject.WebApi
 {

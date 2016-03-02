@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using TestProject.Services.Contracts.User;
 
 namespace TestProject.Services.REST.Abstract
 {
     public interface IUserService
     {
+        IQueryable<UserDto> Get();
+        UserDto Get(int userId);
+        void AddUser(UserDto user);
     }
 }

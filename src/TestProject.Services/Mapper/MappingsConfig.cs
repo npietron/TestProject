@@ -1,17 +1,23 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using TestProject.Model;
 using TestProject.Services.Contracts.Message;
 using TestProject.Services.Contracts.Post;
 using TestProject.Services.Contracts.User;
 
-namespace TestProject.WebApi
+namespace TestProject.Services.Mapper
 {
     public static class MappingsConfig
     {
+        private static IMapper _mapper;
+
+        public static IMapper Mapper
+        {
+            get
+            {
+                return _mapper;
+            }
+        }
+
         public static void RegisterMappings()
         {
             var configuration = new MapperConfiguration(cfg =>
@@ -23,7 +29,7 @@ namespace TestProject.WebApi
 
             configuration.AssertConfigurationIsValid();
 
-            configuration.CreateMapper();
+            _mapper = configuration.CreateMapper();
         }
     }
 }
