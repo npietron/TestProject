@@ -1,4 +1,11 @@
-﻿using System.Web.OData;
+﻿using System;
+using System.Linq;
+using System.Net;
+using System.Web.Http;
+using System.Web.OData;
+using System.Web.OData.Query;
+using System.Web.OData.Routing;
+using TestProject.Services.Contracts.User;
 using TestProject.Services.REST.Abstract;
 
 namespace TestProject.WebApi.Controllers
@@ -10,6 +17,57 @@ namespace TestProject.WebApi.Controllers
         public UserController(IUserService userService)
         {
             _userService = userService;
+        }
+
+        [HttpGet]
+        public IQueryable<UserDto> Get(ODataQueryOptions options)
+        {
+            var result = _userService.Get();
+
+            if (options.Filter != null)
+            {
+                var settings = new ODataQuerySettings();
+                result = options.Filter.ApplyTo(result, settings) as IQueryable<UserDto>;
+            }
+
+            return options.ApplyTo(result) as IQueryable<UserDto>;
+        }
+
+        [HttpGet]
+        [ODataRoute("GetUser(UserId={userId})")]
+        public IHttpActionResult GetUser([FromODataUri]string userId)
+        {
+            IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
+
+            var result = _userService.Get(Convert.ToInt32(userId));
+
+            if (result != null)
+                actionResult = Ok(result);
+
+            return actionResult;
+        }
+
+        [HttpPost]
+        [ODataRoute(("AddUser"))]
+        public IHttpActionResult AddUser(ODataActionParameters parameters)
+        {
+            IHttpActionResult actionResult = BadRequest();
+
+            if (!ModelState.IsValid)
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+            UserDto request = parameters["Request"] as UserDto;
+
+            if (request != null)
+            {
+                _userService.AddUser(request);
+
+                actionResult = Ok();
+            }
+
+            return actionResult;
         }
     }
 }
