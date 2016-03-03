@@ -34,7 +34,7 @@ namespace TestProject.WebApi.Controllers
 
         [HttpGet]
         [ODataRoute("GetMessagesByUserId(UserId={userId})")]
-        public IHttpActionResult GetMessagesByUser([FromODataUri]int userId)
+        public IHttpActionResult GetMessagesByUserId([FromODataUri]int userId)
         {
             IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
 
@@ -48,7 +48,7 @@ namespace TestProject.WebApi.Controllers
 
         [HttpGet]
         [ODataRoute("GetMessagesByPostId(PostId={postId})")]
-        public IHttpActionResult GetMessagesByPost([FromODataUri]int postId)
+        public IHttpActionResult GetMessagesByPostId([FromODataUri]int postId)
         {
             IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
 

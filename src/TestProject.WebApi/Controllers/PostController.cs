@@ -34,7 +34,7 @@ namespace TestProject.WebApi.Controllers
 
         [HttpGet]
         [ODataRoute("GetPostsByUserId(UserId={userId})")]
-        public IHttpActionResult GetPostsByUser([FromODataUri]int userId)
+        public IHttpActionResult GetPostsByUserId([FromODataUri]int userId)
         {
             IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
 
