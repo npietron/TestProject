@@ -181,10 +181,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestProject.Common\TestProject.Common.csproj">
-      <Project>{79a8e93c-8118-4de5-8183-88a1646da6cf}</Project>
-      <Name>TestProject.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TestProject.DataLayer\TestProject.DataLayer.csproj">
       <Project>{987c7eba-5253-4acd-8972-e09a012f8572}</Project>
       <Name>TestProject.DataLayer</Name>
