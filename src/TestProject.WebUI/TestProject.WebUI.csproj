@@ -117,6 +117,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="angular\app.js" />
+    <Content Include="angular\consts.js" />
+    <Content Include="angular\modules\message\init-module.js" />
+    <Content Include="angular\modules\post\init-module.js" />
+    <Content Include="angular\modules\user\init-module.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -180,6 +185,10 @@
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\jquery-ui-1.11.4.js" />
     <Content Include="scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="scripts\lodash.js" />
+    <Content Include="scripts\lodash.min.js" />
+    <Content Include="scripts\restangular.js" />
+    <Content Include="scripts\restangular.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -204,7 +213,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="angular\" />
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />

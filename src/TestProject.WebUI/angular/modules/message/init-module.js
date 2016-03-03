@@ -1,0 +1,1 @@
+﻿var messageModule = angular.module('message', ['app.config']);

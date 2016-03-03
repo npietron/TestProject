@@ -33,6 +33,20 @@ namespace TestProject.WebApi.Controllers
         }
 
         [HttpGet]
+        [ODataRoute("GetPostById(PostId={postId})")]
+        public IHttpActionResult GetPostById([FromODataUri] int postId)
+        {
+            IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
+
+            var result = _postService.Get(postId);
+
+            if (result != null)
+                actionResult = Ok(result);
+
+            return actionResult;
+        }
+
+        [HttpGet]
         [ODataRoute("GetPostsByUserId(UserId={userId})")]
         public IHttpActionResult GetPostsByUserId([FromODataUri]int userId)
         {

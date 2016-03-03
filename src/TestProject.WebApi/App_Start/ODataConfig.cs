@@ -49,6 +49,10 @@ namespace TestProject.WebApi
 
             #region Posts
 
+            builder.Function("GetPostById")
+                .ReturnsFromEntitySet<PostDto>("Post")
+                .Parameter<int>("PostId");
+
             builder.Function("GetPostsByUserId")
                 .ReturnsCollectionFromEntitySet<PostDto>("Post")
                 .Parameter<int>("UserId");

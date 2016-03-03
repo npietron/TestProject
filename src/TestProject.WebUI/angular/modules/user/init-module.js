@@ -1,0 +1,1 @@
+﻿var userModule = angular.module('user', ['app.config']);
