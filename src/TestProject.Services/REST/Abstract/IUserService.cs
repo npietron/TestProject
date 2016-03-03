@@ -7,6 +7,7 @@ namespace TestProject.Services.REST.Abstract
     {
         IQueryable<UserDto> Get();
         UserDto Get(int userId);
+        bool DoesUserExists(string nick);
         void AddUser(UserDto user);
     }
 }

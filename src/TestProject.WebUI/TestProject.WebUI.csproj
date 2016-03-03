@@ -120,8 +120,11 @@
     <Content Include="angular\app.js" />
     <Content Include="angular\consts.js" />
     <Content Include="angular\modules\message\init-module.js" />
+    <Content Include="angular\modules\message\services\message-service.js" />
     <Content Include="angular\modules\post\init-module.js" />
+    <Content Include="angular\modules\post\services\post-service.js" />
     <Content Include="angular\modules\user\init-module.js" />
+    <Content Include="angular\modules\user\services\user-service.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

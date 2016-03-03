@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TestProject.DataLayer.Repositories.Abstract;
 using TestProject.Model;
@@ -22,6 +23,11 @@ namespace TestProject.Services.REST.Concrete
             var mappedUser = MappingsConfig.Mapper.Map<User>(user);
 
             _userRepository.SaveUser(mappedUser);
+        }
+
+        public bool DoesUserExists(string nick)
+        {
+            return _userRepository.Users.Any(x => x.Nick == nick);
         }
 
         public IQueryable<UserDto> Get()

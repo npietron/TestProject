@@ -45,6 +45,10 @@ namespace TestProject.WebApi
                 .ReturnsFromEntitySet<UserDto>("User")
                 .Parameter<int>("UserId");
 
+            builder.Function("DoesUserExists")
+                .Returns<bool>()
+                .Parameter<string>("Nick");
+
             #endregion
 
             #region Posts

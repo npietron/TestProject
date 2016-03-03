@@ -11,5 +11,6 @@
         postById: '/GetPostById',
         postsByUserId: '/GetPostsByUserId',
         messagesByUserId: '/GetMessagesByUserId',
-        messagesByPostId: '/GetMessagesByPostId'
+        messagesByPostId: '/GetMessagesByPostId',
+        doesUserExists: '/DoesUserExists'
     })
