@@ -101,6 +101,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -110,6 +114,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.OData, Version=5.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.OData.5.8.0\lib\net45\System.Web.OData.dll</HintPath>
       <Private>True</Private>
@@ -141,6 +149,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="App_Start\CorsConfig.cs" />
+    <Compile Include="App_Start\FormatConfig.cs" />
     <Compile Include="App_Start\ODataConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -171,6 +181,14 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestProject.Common\TestProject.Common.csproj">
+      <Project>{79a8e93c-8118-4de5-8183-88a1646da6cf}</Project>
+      <Name>TestProject.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestProject.DataLayer\TestProject.DataLayer.csproj">
+      <Project>{987c7eba-5253-4acd-8972-e09a012f8572}</Project>
+      <Name>TestProject.DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestProject.Model\TestProject.Model.csproj">
       <Project>{0b010ac6-6f02-420c-b403-96f9a7cdb381}</Project>
       <Name>TestProject.Model</Name>
@@ -195,7 +213,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>57548</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56860/</IISUrl>
+          <IISUrl>http://localhost:5200/TEST_Service</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

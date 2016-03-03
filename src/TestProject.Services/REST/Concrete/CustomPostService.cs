@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TestProject.DataLayer.Repositories.Abstract;
 using TestProject.Model;
 using TestProject.Services.Contracts.Post;
@@ -26,7 +27,7 @@ namespace TestProject.Services.REST.Concrete
         public IQueryable<PostDto> Get()
         {
             var result = _postRepository.Posts;
-            var posts = MappingsConfig.Mapper.Map<IQueryable<PostDto>>(result);
+            var posts = MappingsConfig.Mapper.Map<IEnumerable<PostDto>>(result).AsQueryable();
 
             return posts;
         }
@@ -42,7 +43,7 @@ namespace TestProject.Services.REST.Concrete
         public IQueryable<PostDto> GetPostsByUserId(int userId)
         {
             var result = _postRepository.Posts.Where(x => x.UserId == userId);
-            var posts = MappingsConfig.Mapper.Map<IQueryable<PostDto>>(result);
+            var posts = MappingsConfig.Mapper.Map<IEnumerable<PostDto>>(result).AsQueryable();
 
             return posts;
         }

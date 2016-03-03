@@ -41,29 +41,29 @@ namespace TestProject.WebApi
         {
             #region Users
 
-            builder.Function("GetUser")
+            builder.Function("GetUserById")
                 .ReturnsFromEntitySet<UserDto>("User")
-                .Parameter<string>("UserId");
+                .Parameter<int>("UserId");
 
             #endregion
 
             #region Posts
 
-            builder.Function("GetPostsByUser")
+            builder.Function("GetPostsByUserId")
                 .ReturnsCollectionFromEntitySet<PostDto>("Post")
-                .Parameter<string>("UserId");
+                .Parameter<int>("UserId");
 
             #endregion
 
             #region Messages
 
-            builder.Function("GetMessagesByUser")
+            builder.Function("GetMessagesByUserId")
                 .ReturnsCollectionFromEntitySet<MessageDto>("Message")
-                .Parameter<string>("UserId");
+                .Parameter<int>("UserId");
 
-            builder.Function("GetMessagesByPost")
+            builder.Function("GetMessagesByPostId")
                 .ReturnsCollectionFromEntitySet<MessageDto>("Message")
-                .Parameter<string>("PostId");
+                .Parameter<int>("PostId");
 
             #endregion
 
@@ -76,7 +76,7 @@ namespace TestProject.WebApi
             ActionConfiguration actionAddUser = builder.Action("AddUser");
 
             actionAddUser.Parameter<UserDto>("Request");
-            actionAddUser.ReturnsCollectionFromEntitySet<UserDto>("User");
+            actionAddUser.ReturnsFromEntitySet<UserDto>("User");
 
             #endregion
 
@@ -85,7 +85,7 @@ namespace TestProject.WebApi
             ActionConfiguration actionAddPost = builder.Action("AddPost");
 
             actionAddPost.Parameter<PostDto>("Request");
-            actionAddPost.ReturnsCollectionFromEntitySet<PostDto>("Post");
+            actionAddPost.ReturnsFromEntitySet<PostDto>("Post");
 
             #endregion
 
@@ -94,7 +94,7 @@ namespace TestProject.WebApi
             ActionConfiguration actionAddMessage = builder.Action("AddMessage");
 
             actionAddMessage.Parameter<MessageDto>("Request");
-            actionAddMessage.ReturnsCollectionFromEntitySet<MessageDto>("Message");
+            actionAddMessage.ReturnsFromEntitySet<MessageDto>("Message");
 
             #endregion
         }

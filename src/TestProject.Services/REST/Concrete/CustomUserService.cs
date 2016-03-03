@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TestProject.DataLayer.Repositories.Abstract;
 using TestProject.Model;
 using TestProject.Services.Contracts.User;
@@ -26,7 +27,7 @@ namespace TestProject.Services.REST.Concrete
         public IQueryable<UserDto> Get()
         {
             var result = _userRepository.Users;
-            var users = MappingsConfig.Mapper.Map<IQueryable<UserDto>>(result);
+            var users = MappingsConfig.Mapper.Map<IEnumerable<UserDto>>(result).AsQueryable();
 
             return users;
         }

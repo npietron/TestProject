@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Web.Http;
 using System.Web.OData;
@@ -34,12 +33,12 @@ namespace TestProject.WebApi.Controllers
         }
 
         [HttpGet]
-        [ODataRoute("GetPostsByUser(UserId={userId})")]
-        public IHttpActionResult GetPostsByUser([FromODataUri]string userId)
+        [ODataRoute("GetPostsByUserId(UserId={userId})")]
+        public IHttpActionResult GetPostsByUser([FromODataUri]int userId)
         {
             IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
 
-            var result = _postService.GetPostsByUserId(Convert.ToInt32(userId));
+            var result = _postService.GetPostsByUserId(userId);
 
             if (result != null)
                 actionResult = Ok(result);
@@ -48,7 +47,7 @@ namespace TestProject.WebApi.Controllers
         }
 
         [HttpPost]
-        [ODataRoute(("AddPost"))]
+        [ODataRoute("AddPost")]
         public IHttpActionResult AddPost(ODataActionParameters parameters)
         {
             IHttpActionResult actionResult = BadRequest();

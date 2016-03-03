@@ -51,7 +51,7 @@
     <Compile Include="REST\Abstract\IMessageService.cs" />
     <Compile Include="REST\Abstract\IPostService.cs" />
     <Compile Include="REST\Abstract\IUserService.cs" />
-    <Compile Include="REST\Concrete\CustomMesssageService.cs" />
+    <Compile Include="REST\Concrete\CustomMessageService.cs" />
     <Compile Include="REST\Concrete\CustomPostService.cs" />
     <Compile Include="REST\Concrete\CustomUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

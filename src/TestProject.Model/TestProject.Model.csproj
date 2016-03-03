@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\DbHelper.cs" />
     <Compile Include="Message.cs">
       <DependentUpon>TestProjectModel.tt</DependentUpon>
     </Compile>
@@ -74,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestProjectModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="TestProjectModelExtension.cs" />
     <Compile Include="User.cs">
       <DependentUpon>TestProjectModel.tt</DependentUpon>
     </Compile>

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Web.Http;
 using System.Web.OData;
@@ -34,12 +33,12 @@ namespace TestProject.WebApi.Controllers
         }
 
         [HttpGet]
-        [ODataRoute("GetMessagesByUser(UserId={userId})")]
-        public IHttpActionResult GetMessagesByUser([FromODataUri]string userId)
+        [ODataRoute("GetMessagesByUserId(UserId={userId})")]
+        public IHttpActionResult GetMessagesByUser([FromODataUri]int userId)
         {
             IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
 
-            var result = _messageService.GetMessagesByUserId(Convert.ToInt32(userId));
+            var result = _messageService.GetMessagesByUserId(userId);
 
             if (result != null)
                 actionResult = Ok(result);
@@ -48,12 +47,12 @@ namespace TestProject.WebApi.Controllers
         }
 
         [HttpGet]
-        [ODataRoute("GetMessagesByPost(PostId={postId})")]
-        public IHttpActionResult GetMessagesByPost([FromODataUri]string postId)
+        [ODataRoute("GetMessagesByPostId(PostId={postId})")]
+        public IHttpActionResult GetMessagesByPost([FromODataUri]int postId)
         {
             IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
 
-            var result = _messageService.GetMessagesByPostId(Convert.ToInt32(postId));
+            var result = _messageService.GetMessagesByPostId(postId);
 
             if (result != null)
             {

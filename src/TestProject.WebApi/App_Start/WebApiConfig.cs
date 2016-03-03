@@ -7,7 +7,11 @@ namespace TestProject.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+            CorsConfig.EnableCors(config);
+
             MappingsConfig.RegisterMappings();
+
+            FormatConfig.ManageFormats(config);
 
             AutofacConfig.RegisterTypes(config);
 
