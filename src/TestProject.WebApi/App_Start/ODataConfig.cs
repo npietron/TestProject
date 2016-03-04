@@ -47,7 +47,7 @@ namespace TestProject.WebApi
 
             builder.Function("DoesUserExists")
                 .Returns<bool>()
-                .Parameter<string>("Nick");
+                .Parameter<string>("UserName");
 
             #endregion
 

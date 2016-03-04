@@ -47,10 +47,10 @@ namespace TestProject.WebApi.Controllers
         }
 
         [HttpGet]
-        [ODataRoute("DoesUserExists(Nick={nick})")]
-        public bool DoesUserExists([FromODataUri]string nick)
+        [ODataRoute("DoesUserExists(UserName={userName})")]
+        public bool DoesUserExists([FromODataUri]string userName)
         {
-            return _userService.DoesUserExists(nick);
+            return _userService.DoesUserExists(userName);
         }
 
         [HttpPost]

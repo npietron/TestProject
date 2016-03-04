@@ -25,9 +25,9 @@ namespace TestProject.Services.REST.Concrete
             _userRepository.SaveUser(mappedUser);
         }
 
-        public bool DoesUserExists(string nick)
+        public bool DoesUserExists(string userName)
         {
-            return _userRepository.Users.Any(x => x.Nick == nick);
+            return _userRepository.Users.Any(x => x.UserName == userName);
         }
 
         public IQueryable<UserDto> Get()

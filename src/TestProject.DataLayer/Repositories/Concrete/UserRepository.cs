@@ -45,9 +45,7 @@ namespace TestProject.DataLayer.Repositories.Concrete
                 User dbEntry = _context.Users.Find(user.UserId);
                 if (dbEntry != null)
                 {
-                    dbEntry.Name = user.Name;
-                    dbEntry.Surname = user.Surname;
-                    dbEntry.Nick = user.Nick;
+                    dbEntry.UserName = user.UserName;
                 }
             }
             _context.SaveChanges();

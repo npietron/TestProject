@@ -1,0 +1,50 @@
+[
+  {
+    "outputFileName": "angular/modules/post/PostBundle.js",
+    "inputFiles": [
+      "angular/modules/post/controller/post-controller.js",
+      "angular/modules/post/services/post-service.js",
+      "angular/modules/post/init-module.js"
+    ]
+  },
+  {
+    "outputFileName": "angular/modules/message/MessageBundle.js",
+    "inputFiles": [
+      "angular/modules/message/controller/message-controller.js",
+      "angular/modules/message/services/message-service.js",
+      "angular/modules/message/init-module.js"
+    ]
+  },
+  {
+    "outputFileName": "angular/modules/user/UserBundle.js",
+    "inputFiles": [
+      "angular/modules/user/controller/user-controller.js",
+      "angular/modules/user/services/user-service.js",
+      "angular/modules/user/init-module.js"
+    ]
+  },
+  {
+    "outputFileName": "angular/modules/message/MessageJS.js",
+    "inputFiles": [
+      "angular/modules/message/init-module.js",
+      "angular/modules/message/services/message-service.js",
+      "angular/modules/message/controller/message-controller.js"
+    ]
+  },
+  {
+    "outputFileName": "angular/modules/post/PostJS.js",
+    "inputFiles": [
+      "angular/modules/post/init-module.js",
+      "angular/modules/post/services/post-service.js",
+      "angular/modules/post/controller/post-controller.js"
+    ]
+  },
+  {
+    "outputFileName": "angular/modules/user/UserJS.js",
+    "inputFiles": [
+      "angular/modules/user/init-module.js",
+      "angular/modules/user/services/user-service.js",
+      "angular/modules/user/controller/user-controller.js"
+    ]
+  }
+]

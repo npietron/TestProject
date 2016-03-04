@@ -1,0 +1,46 @@
+﻿﻿@using System.Web.UI.WebControls
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test Project</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <script src="~/scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/angular.js"></script>
+    <script src="~/scripts/angular-route.min.js"></script>
+    <script src="~/scripts/angular-mocks.js"></script>
+    <script src="~/scripts/lodash.min.js"></script>
+    <script src="~/scripts/restangular.min.js"></script>
+
+    <script src="~/scripts/angular-sanitize.js"></script>
+
+
+</head>
+<body ng-app="mainApp" ng-cloak>
+    <div>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <div class="container navbar-container">
+                <h1><p class="navbar-text">Test Project</p></h1>
+            </div>
+            <!-- /.container -->
+        </nav>
+    </div>
+
+    <div class="module-container" ui-view></div>
+
+    <script src="~/angular/app.js"></script>
+    <script src="~/angular/consts.js"></script>
+    <script src="~/angular/modules/user/UserJS.js"></script>
+    <script src="~/angular/modules/post/PostJS.js"></script>
+    <script src="~/angular/modules/message/MessageJS.js"></script>
+</body>
+</html>

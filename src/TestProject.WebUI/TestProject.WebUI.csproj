@@ -119,16 +119,36 @@
   <ItemGroup>
     <Content Include="angular\app.js" />
     <Content Include="angular\consts.js" />
+    <Content Include="angular\modules\message\controller\message-controller.js" />
     <Content Include="angular\modules\message\init-module.js" />
+    <Content Include="angular\modules\message\MessageJS.js" />
+    <Content Include="angular\modules\message\MessageJS.min.js">
+      <DependentUpon>MessageJS.js</DependentUpon>
+    </Content>
     <Content Include="angular\modules\message\services\message-service.js" />
+    <Content Include="angular\modules\post\controller\post-controller.js" />
     <Content Include="angular\modules\post\init-module.js" />
+    <Content Include="angular\modules\post\PostJS.js" />
+    <Content Include="angular\modules\post\PostJS.min.js">
+      <DependentUpon>PostJS.js</DependentUpon>
+    </Content>
     <Content Include="angular\modules\post\services\post-service.js" />
+    <Content Include="angular\modules\user\controller\user-controller.js" />
     <Content Include="angular\modules\user\init-module.js" />
     <Content Include="angular\modules\user\services\user-service.js" />
+    <Content Include="angular\modules\user\UserJS.js" />
+    <Content Include="angular\modules\user\UserJS.min.js">
+      <DependentUpon>UserJS.js</DependentUpon>
+    </Content>
+    <Content Include="angular\views\main.html" />
+    <Content Include="angular\views\postDetails.html" />
+    <Content Include="angular\views\userLogin.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -162,6 +182,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
@@ -175,12 +196,21 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\angular-route.js" />
+    <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular-sanitize.js" />
     <Content Include="scripts\angular-sanitize.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-sanitize.min.js.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="bundleconfig.json" />
+    <Content Include="scripts\angular-route.min.js.map" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -196,6 +226,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,6 +239,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -217,7 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,13 @@
+﻿<div class="well" ng-controller="UserController">
+    <form name="userForm" novalidate>
+        <div class="form-group">
+            <label>Username</label>
+            <input name="username" class="form-control" ng-model="userName" />
+        </div>
+        <div class="text-center">
+            <button ng-click="performLogin(userName)" class="btn-primary">
+                Login
+            </button>
+        </div>
+    </form>
+</div>
