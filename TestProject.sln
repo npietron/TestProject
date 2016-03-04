@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.WebUI", "src\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject.WebApi", "src\TestProject.WebApi\TestProject.WebApi.csproj", "{C9396A05-A3A7-417F-9034-D016B79D7B6A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{B040FE6B-611A-4960-AF40-680DB0C5FB76}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TestProject.Database", "db\TestProject.Database\TestProject.Database.sqlproj", "{35F41AAB-626F-41E9-8FC2-C190EB27B62D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,12 @@ Global
 		{C9396A05-A3A7-417F-9034-D016B79D7B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9396A05-A3A7-417F-9034-D016B79D7B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9396A05-A3A7-417F-9034-D016B79D7B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F41AAB-626F-41E9-8FC2-C190EB27B62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F41AAB-626F-41E9-8FC2-C190EB27B62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F41AAB-626F-41E9-8FC2-C190EB27B62D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{35F41AAB-626F-41E9-8FC2-C190EB27B62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F41AAB-626F-41E9-8FC2-C190EB27B62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F41AAB-626F-41E9-8FC2-C190EB27B62D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +70,6 @@ Global
 		{987C7EBA-5253-4ACD-8972-E09A012F8572} = {58E6EDE3-6D31-426A-93BC-F0D23473D32F}
 		{4D5FD900-8338-46F2-9435-23E0F3F5095E} = {58E6EDE3-6D31-426A-93BC-F0D23473D32F}
 		{C9396A05-A3A7-417F-9034-D016B79D7B6A} = {58E6EDE3-6D31-426A-93BC-F0D23473D32F}
+		{35F41AAB-626F-41E9-8FC2-C190EB27B62D} = {B040FE6B-611A-4960-AF40-680DB0C5FB76}
 	EndGlobalSection
 EndGlobal
