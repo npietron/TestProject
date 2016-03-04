@@ -14,3 +14,13 @@
         messagesByPostId: '/GetMessagesByPostId',
         doesUserExists: '/DoesUserExists'
     })
+    .constant('routePathConfig', {
+        login: '/login',
+        home: '/home',
+        details: '/details'
+    })
+    .constant('states', {
+        home: 'home',
+        login: 'login',
+        details: 'details'
+    });

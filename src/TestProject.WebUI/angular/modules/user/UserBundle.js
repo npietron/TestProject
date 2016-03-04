@@ -1,4 +1,20 @@
-var userModule = angular.module('user', ['app.config']);
+userModule
+    .controller('UserController', function ($scope, $location, UserService) {
+
+        $scope.performLogin = function (userName) {
+            var userExists = UserService.doesUserExists(userName);
+
+            if (!userExists) {
+                var userDto = {
+                    UserName: userName
+                };
+
+                UserService.addUser(userDto);
+            }
+            $location.path('/home');
+        }
+
+    });
 userModule
     .factory('UserService', function (apiPathConfig, Restangular) {
         var addUserPackage = Restangular.all(apiPathConfig.addUser);
@@ -24,20 +40,4 @@ userModule
         }
 
     });
-userModule
-    .controller('UserController', function ($scope, $location, UserService) {
-
-        $scope.performLogin = function (userName) {
-            var userExists = UserService.doesUserExists(userName);
-
-            if (!userExists) {
-                var userDto = {
-                    UserName: userName
-                };
-
-                UserService.addUser(userDto);
-            }
-            $location.path('/home');
-        }
-
-    });
+var userModule = angular.module('user', ['app.config']);

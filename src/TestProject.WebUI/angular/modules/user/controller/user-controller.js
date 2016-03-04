@@ -11,7 +11,7 @@
 
                 UserService.addUser(userDto);
             }
-            $location.path('/main');
+            $location.path('/home');
         }
 
     });

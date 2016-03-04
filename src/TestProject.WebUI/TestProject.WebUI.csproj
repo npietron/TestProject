@@ -136,11 +136,15 @@
     <Content Include="angular\modules\user\controller\user-controller.js" />
     <Content Include="angular\modules\user\init-module.js" />
     <Content Include="angular\modules\user\services\user-service.js" />
+    <Content Include="angular\modules\user\UserBundle.js" />
+    <Content Include="angular\modules\user\UserBundle.min.js">
+      <DependentUpon>UserBundle.js</DependentUpon>
+    </Content>
     <Content Include="angular\modules\user\UserJS.js" />
     <Content Include="angular\modules\user\UserJS.min.js">
       <DependentUpon>UserJS.js</DependentUpon>
     </Content>
-    <Content Include="angular\views\main.html" />
+    <Content Include="angular\views\home.html" />
     <Content Include="angular\views\postDetails.html" />
     <Content Include="angular\views\userLogin.html" />
     <Content Include="Content\bootstrap-theme.css" />

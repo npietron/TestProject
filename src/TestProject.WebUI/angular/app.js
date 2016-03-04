@@ -10,17 +10,20 @@
     .config(function (RestangularProvider, apiPathConfig) {
         RestangularProvider.setBaseUrl(apiPathConfig.API_PATH);
     })
-    .config(function ($routeProvider) {
-        $routeProvider.when('/login', {
-            templateUrl: "views/userLogin.html"
+    .config(function ($routeProvider, routePathConfig) {
+        $routeProvider.when(routePathConfig.login, {
+            templateUrl: "views/userLogin.html",
+            controller: "UserController"
         });
-        $routeProvider.when('/main', {
-            templateUrl: "views/main.html"
+        $routeProvider.when(routePathConfig.home, {
+            templateUrl: "views/home.html",
+            controller: "PostController"
         });
-        $routeProvider.when('/details', {
-            templateUrl: "views/postDetails.html"
+        $routeProvider.when(routePathConfig.details, {
+            templateUrl: "views/postDetails.html",
+            controller: "MessageController"
         });
-        $routeProvider.otherwise('/details', {
-            redirectTo: "/login"
-        });
+        $routeProvider.otherwise(routePathConfig.details, {
+            redirectTo: routePathConfig.login
+        }); 
     });
