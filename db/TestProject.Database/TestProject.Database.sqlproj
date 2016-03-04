@@ -69,6 +69,8 @@
     <Build Include="dbo\Tables\Message.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="TestProject.Database.publish.xml" />
+    <None Include="TestProject.Database.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
