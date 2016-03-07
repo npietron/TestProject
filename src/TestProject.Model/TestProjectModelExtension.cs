@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TestProject.Model
 {
-    public partial class TestProjectContext
+    public partial class TestProjectDBContext
     {
-        public TestProjectContext(string connectionString):
+        public TestProjectDBContext(string connectionString):
             base(connectionString)
         {
 

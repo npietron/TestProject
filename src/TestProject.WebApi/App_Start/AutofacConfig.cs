@@ -17,7 +17,7 @@ namespace TestProject.WebApi
         {
             var builder = new ContainerBuilder();
 
-            builder.Register<TestProjectContext>((context => new TestProjectContext(DbHelper.GetConnectionString())))
+            builder.Register<TestProjectDBContext>((context => new TestProjectDBContext(DbHelper.GetConnectionString())))
                 .InstancePerLifetimeScope();
 
             #region Common

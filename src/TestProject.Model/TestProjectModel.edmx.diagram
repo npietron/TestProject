@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="64c44dac23ed4165b5aa9e0b87d740f7" Name="Diagram1">
-        <EntityTypeShape EntityType="TestProjectModel.Message" Width="1.5" PointX="6.25" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TestProjectModel.Post" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TestProjectModel.User" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
-        <AssociationConnector Association="TestProjectModel.FK_Message_Post" ManuallyRouted="false" />
-        <AssociationConnector Association="TestProjectModel.FK_Message_User" ManuallyRouted="false" />
-        <AssociationConnector Association="TestProjectModel.FK_Post_User" ManuallyRouted="false" />
+      <Diagram DiagramId="0768279ffa114d10840090da8d04b232" Name="Diagram1">
+        <EntityTypeShape EntityType="TestProjectDBModel.Message" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestProjectDBModel.Post" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestProjectDBModel.User" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="TestProjectDBModel.FK_Message_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="TestProjectDBModel.FK_Message_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TestProjectDBModel.FK_Post_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

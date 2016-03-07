@@ -6,9 +6,9 @@ namespace TestProject.DataLayer.Repositories.Concrete
 {
     public class MessageRepository : IMessageRepository
     {
-        private readonly TestProjectContext _context;
+        private readonly TestProjectDBContext _context;
 
-        public MessageRepository(TestProjectContext context)
+        public MessageRepository(TestProjectDBContext context)
         {
             _context = context;
         }
@@ -17,17 +17,17 @@ namespace TestProject.DataLayer.Repositories.Concrete
         {
             get
             {
-                return _context.Messages;
+                return _context.Message;
             }
         }
 
         public Message DeleteMessage(int messageId)
         {
-            Message dbEntry = _context.Messages.Find(messageId);
+            Message dbEntry = _context.Message.Find(messageId);
 
             if (dbEntry != null)
             {
-                _context.Messages.Remove(dbEntry);
+                _context.Message.Remove(dbEntry);
                 _context.SaveChanges();
             }
 
@@ -38,11 +38,11 @@ namespace TestProject.DataLayer.Repositories.Concrete
         {
             if (message.MessageId == 0)
             {
-                _context.Messages.Add(message);
+                _context.Message.Add(message);
             }
             else
             {
-                Message dbEntry = _context.Messages.Find(message.MessageId);
+                Message dbEntry = _context.Message.Find(message.MessageId);
                 if (dbEntry != null)
                 {
                     dbEntry.Content = message.Content;

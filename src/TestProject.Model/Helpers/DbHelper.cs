@@ -11,7 +11,7 @@ namespace TestProject.Model.Helpers
         public static string GetConnectionString()
         {
             return
-                @"metadata=res://*/TestProjectModel.csdl|res://*/TestProjectModel.ssdl|res://*/TestProjectModel.msl;provider=System.Data.SqlClient;provider connection string='data source=(localdb)\MSSQLLocalDB;initial catalog=TestProject;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework'";
+                @"metadata=res://*/TestProjectModel.csdl|res://*/TestProjectModel.ssdl|res://*/TestProjectModel.msl;provider=System.Data.SqlClient;provider connection string='data source=(localdb)\MSSQLLocalDB;initial catalog=TestProjectDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework'";
         }
     }
 }

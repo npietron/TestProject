@@ -6,9 +6,9 @@ namespace TestProject.DataLayer.Repositories.Concrete
 {
     public class UserRepository : IUserRepository
     {
-        private readonly TestProjectContext _context;
+        private readonly TestProjectDBContext _context;
 
-        public UserRepository(TestProjectContext context)
+        public UserRepository(TestProjectDBContext context)
         {
             _context = context;
         }
@@ -17,17 +17,17 @@ namespace TestProject.DataLayer.Repositories.Concrete
         {
             get
             {
-                return _context.Users;
+                return _context.User;
             }
         }
 
         public User DeleteUser(int userId)
         {
-            User dbEntry = _context.Users.Find(userId);
+            User dbEntry = _context.User.Find(userId);
 
             if (dbEntry != null)
             {
-                _context.Users.Remove(dbEntry);
+                _context.User.Remove(dbEntry);
                 _context.SaveChanges();
             }
 
@@ -38,11 +38,11 @@ namespace TestProject.DataLayer.Repositories.Concrete
         {
             if (user.UserId == 0)
             {
-                _context.Users.Add(user);
+                _context.User.Add(user);
             }
             else
             {
-                User dbEntry = _context.Users.Find(user.UserId);
+                User dbEntry = _context.User.Find(user.UserId);
                 if (dbEntry != null)
                 {
                     dbEntry.UserName = user.UserName;

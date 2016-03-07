@@ -17,7 +17,7 @@ namespace TestProject.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Post()
         {
-            this.Messages = new HashSet<Message>();
+            this.Message = new HashSet<Message>();
         }
     
         public int PostId { get; set; }
@@ -26,7 +26,7 @@ namespace TestProject.Model
         public System.DateTime Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Message> Messages { get; set; }
+        public virtual ICollection<Message> Message { get; set; }
         public virtual User User { get; set; }
     }
 }

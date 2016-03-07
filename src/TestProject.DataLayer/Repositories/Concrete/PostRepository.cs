@@ -6,9 +6,9 @@ namespace TestProject.DataLayer.Repositories.Concrete
 {
     public class PostRepository : IPostRepository
     {
-        private readonly TestProjectContext _context;
+        private readonly TestProjectDBContext _context;
 
-        public PostRepository(TestProjectContext context)
+        public PostRepository(TestProjectDBContext context)
         {
             _context = context;
         }
@@ -17,17 +17,17 @@ namespace TestProject.DataLayer.Repositories.Concrete
         {
             get
             {
-                return _context.Posts;
+                return _context.Post;
             }
         }
 
         public Post DeletePost(int postId)
         {
-            Post dbEntry = _context.Posts.Find(postId);
+            Post dbEntry = _context.Post.Find(postId);
 
             if (dbEntry != null)
             {
-                _context.Posts.Remove(dbEntry);
+                _context.Post.Remove(dbEntry);
                 _context.SaveChanges();
             }
 
@@ -38,11 +38,11 @@ namespace TestProject.DataLayer.Repositories.Concrete
         {
             if (post.PostId == 0)
             {
-                _context.Posts.Add(post);
+                _context.Post.Add(post);
             }
             else
             {
-                Post dbEntry = _context.Posts.Find(post.PostId);
+                Post dbEntry = _context.Post.Find(post.PostId);
                 if (dbEntry != null)
                 {
                     dbEntry.Content = post.Content;

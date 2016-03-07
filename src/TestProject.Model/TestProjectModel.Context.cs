@@ -13,10 +13,10 @@ namespace TestProject.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TestProjectContext : DbContext
+    public partial class TestProjectDBContext : DbContext
     {
-        public TestProjectContext()
-            : base("name=TestProjectContext")
+        public TestProjectDBContext()
+            : base("name=TestProjectDBContext")
         {
         }
     
@@ -25,8 +25,8 @@ namespace TestProject.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Message> Messages { get; set; }
-        public virtual DbSet<Post> Posts { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Message> Message { get; set; }
+        public virtual DbSet<Post> Post { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }
