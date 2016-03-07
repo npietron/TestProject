@@ -1,5 +1,5 @@
 ﻿userModule
-    .controller('UserController', function ($scope, $location, UserService, UserObjectComposer) {
+    .controller('UserController', function ($scope, $location,routePathConfig, UserService, UserObjectComposer) {
 
         $scope.performLogin = function (userName) {
             var userExists = UserService.doesUserExists(userName);
@@ -12,6 +12,6 @@
 
                 UserService.addUser(UserObjectComposer.generateUserObject(userDto));
             }
-            $location.path('/home');
+            $location.path(routePathConfig.home);
         }
     });
