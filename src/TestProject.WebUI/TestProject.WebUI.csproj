@@ -133,6 +133,7 @@
       <DependentUpon>PostJS.js</DependentUpon>
     </Content>
     <Content Include="angular\modules\post\services\post-service.js" />
+    <Content Include="angular\modules\user\components\user-object-composer.js" />
     <Content Include="angular\modules\user\controller\user-controller.js" />
     <Content Include="angular\modules\user\init-module.js" />
     <Content Include="angular\modules\user\services\user-service.js" />

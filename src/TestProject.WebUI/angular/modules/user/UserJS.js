@@ -25,7 +25,24 @@ userModule
 
     });
 userModule
-    .controller('UserController', function ($scope, $location, UserService) {
+    .factory('UserObjectComposer', function () {
+
+        return {
+            generateUserObject: generateUserObject
+        };
+
+        function generateUserObject(data) {
+            return {
+                Request: {
+                    UserId: data.UserId,
+                    UserName: data.UserName
+                }
+            }
+        }
+
+    });
+userModule
+    .controller('UserController', function ($scope, $location, UserService, UserObjectComposer) {
 
         $scope.performLogin = function (userName) {
             var userExists = UserService.doesUserExists(userName);
@@ -36,7 +53,7 @@ userModule
                     UserName: userName
                 };
 
-                UserService.addUser(userDto);
+                UserService.addUser(UserObjectComposer.generateUserObject(userDto));
             }
             $location.path('/home');
         }

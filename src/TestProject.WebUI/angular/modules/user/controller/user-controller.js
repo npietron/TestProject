@@ -1,15 +1,16 @@
 ﻿userModule
-    .controller('UserController', function ($scope, $location, UserService) {
+    .controller('UserController', function ($scope, $location, UserService, UserObjectComposer) {
 
         $scope.performLogin = function (userName) {
             var userExists = UserService.doesUserExists(userName);
 
-            if (!userExists) {
+            if (!userExists.restangularCollection) {
                 var userDto = {
+                    UserId: 0,
                     UserName: userName
                 };
 
-                UserService.addUser(userDto);
+                UserService.addUser(UserObjectComposer.generateUserObject(userDto));
             }
             $location.path('/home');
         }

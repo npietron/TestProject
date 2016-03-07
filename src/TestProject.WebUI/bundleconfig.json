@@ -44,7 +44,8 @@
     "inputFiles": [
       "angular/modules/user/init-module.js",
       "angular/modules/user/services/user-service.js",
-      "angular/modules/user/controller/user-controller.js"
+      "angular/modules/user/controller/user-controller.js",
+      "angular/modules/user/components/user-object-composer.js"
     ]
   }
 ]
