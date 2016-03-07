@@ -19,7 +19,7 @@ userModule
         }
 
         function doesUserExists(userName) {
-            var users = Restangular.one(apiPathConfig.doesUserExists + '(Nick=\'' + userName + '\')');
+            var users = Restangular.one(apiPathConfig.doesUserExists + '(UserName=\'' + userName + '\')');
             return users.get();
         }
 
@@ -30,8 +30,9 @@ userModule
         $scope.performLogin = function (userName) {
             var userExists = UserService.doesUserExists(userName);
 
-            if (!userExists) {
+            if (!userExists.restangularCollection) {
                 var userDto = {
+                    UserId: 0,
                     UserName: userName
                 };
 

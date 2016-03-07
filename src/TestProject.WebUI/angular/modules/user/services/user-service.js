@@ -18,7 +18,7 @@
         }
 
         function doesUserExists(userName) {
-            var users = Restangular.one(apiPathConfig.doesUserExists + '(Nick=\'' + userName + '\')');
+            var users = Restangular.one(apiPathConfig.doesUserExists + '(UserName=\'' + userName + '\')');
             return users.get();
         }
 

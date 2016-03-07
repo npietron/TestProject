@@ -15,17 +15,17 @@ postModule.
         }
 
         function getPosts() {
-            var posts = Restangular.one(apiConfigPath.posts);
+            var posts = Restangular.one(apiPathConfig.posts);
             return posts.get();
         }
 
         function getPostById(id) {
-            var posts = Restangular.one(apiConfigPath.postsById + '(PostId=' + id + ')');
+            var posts = Restangular.one(apiPathConfig.postsById + '(PostId=' + id + ')');
             return posts.get();
         }
 
         function getPostsByUserId(id) {
-            var posts = Restangular.one(apiConfigPath.postsByUserId + '(UserId=' + id + ')');
+            var posts = Restangular.one(apiPathConfig.postsByUserId + '(UserId=' + id + ')');
             return posts.get();
         }
 
