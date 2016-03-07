@@ -12,18 +12,18 @@
     })
     .config(function ($routeProvider, routePathConfig) {
         $routeProvider.when(routePathConfig.login, {
-            templateUrl: "views/userLogin.html",
+            templateUrl: "angular/views/userLogin.html",
             controller: "UserController"
-        });
-        $routeProvider.when(routePathConfig.home, {
-            templateUrl: "views/home.html",
+        })
+        .when(routePathConfig.home, {
+            templateUrl: "angular/views/home.html",
             controller: "PostController"
-        });
-        $routeProvider.when(routePathConfig.details, {
-            templateUrl: "views/postDetails.html",
+        })
+        .when(routePathConfig.details, {
+            templateUrl: "angular/views/postDetails.html",
             controller: "MessageController"
-        });
-        $routeProvider.otherwise(routePathConfig.details, {
+        })
+        .otherwise({
             redirectTo: routePathConfig.login
         }); 
     });
