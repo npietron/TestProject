@@ -126,6 +126,7 @@
       <DependentUpon>MessageJS.js</DependentUpon>
     </Content>
     <Content Include="angular\modules\message\services\message-service.js" />
+    <Content Include="angular\modules\post\components\post-object-composer.js" />
     <Content Include="angular\modules\post\controller\post-controller.js" />
     <Content Include="angular\modules\post\init-module.js" />
     <Content Include="angular\modules\post\PostJS.js" />

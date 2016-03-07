@@ -57,5 +57,4 @@ userModule
             }
             $location.path('/home');
         }
-
     });

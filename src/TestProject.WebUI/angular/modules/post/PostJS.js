@@ -31,14 +31,36 @@ postModule.
 
     });
 postModule
-    .controller('PostController', function ($scope, PostService) {
+    .factory('PostObjectComposer', function () {
+
+        return {
+            generatePostObject: generatePostObject
+        };
+
+        function generatePostObject(data) {
+            return {
+                Request: {
+                    PostId: data.UserId,
+                    Content: data.Content
+                }
+            }
+        }
+
+    });
+postModule
+    .controller('PostController', function ($scope, PostService, PostObjectComposer) {
         $scope.posts = PostService.getPosts();
 
         $scope.getPostById = function (postId) {
             return PostService.getPostById(postId);
         }
 
-        $scope.addPost = function (postDto) {
-            return PostService.addPost(postDto);
+        $scope.addPost = function (content) {
+            var postDto = {
+                PostId: 0,
+                Content: content
+            }
+
+            return PostService.addPost(PostObjectComposer.generatePostObject(postDto));
         }
     });
