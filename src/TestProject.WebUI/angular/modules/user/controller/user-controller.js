@@ -2,15 +2,25 @@
     .controller('UserController', function ($scope, $location,routePathConfig, UserService, UserObjectComposer) {
 
         $scope.performLogin = function (userName) {
-            var userExists = UserService.doesUserExists(userName);
+            var doesUserExists;
 
-            if (!userExists.restangularCollection) {
+            UserService.doesUserExists(userName).then(function (response) {
+                doesUserExists = response.Value;
+            });
+
+            if (!doesUserExists) {
                 var userDto = {
                     UserId: 0,
                     UserName: userName
                 };
 
-                UserService.addUser(UserObjectComposer.generateUserObject(userDto));
+                var userObject = UserObjectComposer.generateUserObject(userDto);
+
+                userDto = UserService.addUser(userObject);
+
+                UserService.setCurrentUser(userDto.UserId);
+            } else {
+                UserService.setCurrentUser(UserService.getUserIdByUserName(userName));
             }
             $location.path(routePathConfig.home);
         }

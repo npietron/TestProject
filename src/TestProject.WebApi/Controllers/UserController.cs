@@ -47,6 +47,20 @@ namespace TestProject.WebApi.Controllers
         }
 
         [HttpGet]
+        [ODataRoute("GetUserIdByUserName(UserName={userName})")]
+        public IHttpActionResult GetUserIdByUserName([FromODataUri]string userName)
+        {
+            IHttpActionResult actionResult = StatusCode(HttpStatusCode.NotFound);
+
+            var result = _userService.Get().FirstOrDefault(x => x.UserName == userName);
+
+            if (result != null)
+                actionResult = Ok(result);
+
+            return actionResult;
+        }
+
+        [HttpGet]
         [ODataRoute("DoesUserExists(UserName={userName})")]
         public bool DoesUserExists([FromODataUri]string userName)
         {

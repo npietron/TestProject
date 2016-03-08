@@ -2,11 +2,15 @@ var userModule = angular.module('user', ['app.config']);
 userModule
     .factory('UserService', function (apiPathConfig, Restangular) {
         var addUserPackage = Restangular.all(apiPathConfig.addUser);
+        var currentUser;
 
         return {
             addUser: addUser,
             getUserById: getUserById,
-            doesUserExists: doesUserExists
+            getUserIdByUserName: getUserIdByUserName,
+            doesUserExists: doesUserExists,
+            getCurrentUser: getCurrentUser,
+            setCurrentUser : setCurrentUser
         };
 
         function addUser(data) {
@@ -18,9 +22,22 @@ userModule
             return users.get();
         }
 
+        function getUserIdByUserName(userName) {
+            var users = Restangular.one(apiPathConfig.getUserById + '(UserName=' + userName + ')');
+            return users.get();
+        }
+
         function doesUserExists(userName) {
             var users = Restangular.one(apiPathConfig.doesUserExists + '(UserName=\'' + userName + '\')');
             return users.get();
+        }
+
+        function getCurrentUser() {
+            return currentUser;
+        }
+
+        function setCurrentUser(userId) {
+            currentUser = userId;
         }
 
     });
@@ -42,19 +59,36 @@ userModule
 
     });
 userModule
-    .controller('UserController', function ($scope, $location,routePathConfig, UserService, UserObjectComposer) {
+    .controller('UserController', function ($scope, $location, $http ,apiPathConfig, routePathConfig, UserService, UserObjectComposer) {
 
         $scope.performLogin = function (userName) {
-            var userExists = UserService.doesUserExists(userName);
 
-            if (!userExists.restangularCollection) {
-                var userDto = {
-                    UserId: 0,
-                    UserName: userName
-                };
+            var doesUserExists;
+            
+            var params = '(UserName=\'' + userName + '\')';
 
-                UserService.addUser(UserObjectComposer.generateUserObject(userDto));
-            }
+            $http({
+                method: 'GET',
+                url: apiPathConfig.API_PATH + '/' + apiPathConfig.doesUserExists + params
+            }).then(function successCallback(response) {
+                if (response.data.value) {
+                    UserService.getUserIdByUserName(userName).then(function (response) {
+                        var userId = response.value;
+
+                        UserService.setCurrentUser(userId);
+                    });
+                } else {
+                    var userDto = {
+                        UserId: 0,
+                        UserName: userName
+                    };
+
+                    var userObject = UserObjectComposer.generateUserObject(userDto);
+
+                    userDto = UserService.addUser(userObject);
+                }
+            });
+
             $location.path(routePathConfig.home);
         }
     });

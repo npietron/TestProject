@@ -48,16 +48,17 @@ postModule
 
     });
 postModule
-    .controller('PostController', function ($scope, PostService, PostObjectComposer) {
+    .controller('PostController', function ($scope, PostService, UserService, PostObjectComposer) {
         $scope.posts = PostService.getPosts();
 
         $scope.getPostById = function (postId) {
             return PostService.getPostById(postId);
         }
 
-        $scope.addPost = function (content) {
+        $scope.addPost = function (content, UserService) {
             var postDto = {
                 PostId: 0,
+                UserId: UserService.getCurrentUser(),
                 Content: content
             }
 

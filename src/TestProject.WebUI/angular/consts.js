@@ -8,6 +8,7 @@
         addPost: 'AddPost',
         addMessage: 'AddMessage',
         userById: 'GetUserById',
+        userIdByUserName: 'GetUserIdByUserName',
         postById: 'GetPostById',
         postsByUserId: 'GetPostsByUserId',
         messagesByUserId: 'GetMessagesByUserId',

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TestProject.DataLayer.Repositories.Abstract;
 using TestProject.Model;
@@ -20,6 +21,8 @@ namespace TestProject.Services.REST.Concrete
         public void AddPost(PostDto post)
         {
             var mappedPost = MappingsConfig.Mapper.Map<Post>(post);
+
+            mappedPost.Date = DateTime.Now;
 
             _postRepository.SavePost(mappedPost);
         }

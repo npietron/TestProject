@@ -45,6 +45,10 @@ namespace TestProject.WebApi
                 .ReturnsFromEntitySet<UserDto>("User")
                 .Parameter<int>("UserId");
 
+            builder.Function("GetUserIdByUserName")
+                .ReturnsFromEntitySet<UserDto>("User")
+                .Parameter<string>("UserName");
+
             builder.Function("DoesUserExists")
                 .Returns<bool>()
                 .Parameter<string>("UserName");

@@ -1,5 +1,5 @@
 ﻿postModule
-    .controller('PostController', function ($scope, PostService, PostObjectComposer) {
+    .controller('PostController', function ($scope, PostService, UserService, PostObjectComposer) {
         $scope.posts = PostService.getPosts();
 
         $scope.getPostById = function (postId) {
@@ -9,6 +9,7 @@
         $scope.addPost = function (content) {
             var postDto = {
                 PostId: 0,
+                UserId: UserService.getCurrentUser(),
                 Content: content
             }
 
